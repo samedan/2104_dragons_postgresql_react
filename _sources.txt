@@ -1,0 +1,31 @@
+>> Create DB
+createdb -U postgres dragonstackdb
+
+>> Connect to DB
+psql -U postgres dragonstackdb
+
+>> Change to the new DB
+\c dragonstackdb
+
+>> CREATE USER for the DB
+CREATE USER dragon_user WITH SUPERUSER PASSWORD 'Fuckyahoo667';
+
+>> See users
+SELECT * FROM pg_user;
+
+>> EXIT environment
+\q
+
+>> SEE TABLES
+\d
+>> SEE Table formatted SCHEMA
+\d+ generation
+
+>> Run Script in GitBash in backend server
+npm run configure
+
+
+
+
+
+
