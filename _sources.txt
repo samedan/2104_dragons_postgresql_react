@@ -29,3 +29,10 @@ npm run configure
 
 
 
+
+//////////////////////////////////////////////////////
+>> GIT 
+https://github.com/samedan/2104_dragons_postgresql_react
+
+git push origin master
+git push origin master:main --force
