@@ -3,3 +3,5 @@
 /frontend/.cache
 /frontend/dist
 /backend/secrets
+.cache
+dist
