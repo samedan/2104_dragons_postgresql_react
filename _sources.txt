@@ -1,5 +1,10 @@
 >> GitHub Source : 
 https://github.com/15Dkatz/dragonstack-guides
+>> Course : 
+https://www.udemy.com/course/full-stack/
+>> Github Me :
+https://github.com/samedan/2104_dragons_postgresql_react
+
 
 >> Create DB
 createdb -U postgres dragonstackdb
