@@ -14,6 +14,7 @@ psql -U dragon_user dragonstackdb < ./bin/sql/generation.sql
 psql -U dragon_user dragonstackdb < ./bin/sql/dragon.sql
 psql -U dragon_user dragonstackdb < ./bin/sql/trait.sql
 psql -U dragon_user dragonstackdb < ./bin/sql/dragonTrait.sql
+psql -U dragon_user dragonstackdb < ./bin/sql/accountDragon.sql
 
 node ./bin/insertTraits.js
 
