@@ -5,8 +5,13 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 import { fetchAuthenticated } from "./actions/account";
-import "./index.css";
 import Root from "./components/Root";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import AccountDragons from "./components/AccountDragons";
+import "./index.css";
+
+const history = createBrowserHistory();
 
 const store = createStore(
   rootReducer,
@@ -17,7 +22,13 @@ const store = createStore(
 store.dispatch(fetchAuthenticated()).then(() => {
   render(
     <Provider store={store}>
-      <Root />
+      {/* <Router history={history}> */}
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Root} />
+          <Route path="/account-dragons" component={AccountDragons} />
+        </Switch>
+      </Router>
     </Provider>,
     document.getElementById("root")
   );
