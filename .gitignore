@@ -1,5 +1,6 @@
 /backend/node_modules
 /frontend/node_modules
+/frontend-npx/node_modules
 /frontend/.cache
 /frontend/dist
 /backend/secrets

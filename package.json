@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently --kill-others \"npm run backend\" \"npm run frontend\"",
     "backend": "nodemon backend/bin/server",
-    "frontend": "parcel frontend/src/index.html"
+    "frontend_babel": "parcel frontend/src/index.html",
+    "frontend": "npm start"
   },
   "repository": {
     "type": "git",
