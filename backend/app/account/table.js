@@ -48,6 +48,26 @@ class AccountTable {
       );
     });
   }
+
+  static updateBalance({ accountId, value }) {
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `
+      UPDATE account SET balance=balance+$1 
+      WHERE id=$2`,
+        [value, accountId],
+        (error, response) => {
+          if (error) return reject(error);
+          resolve();
+        }
+      );
+    });
+  }
 }
+
+// backend -> node /app.dragon/table.js
+// AccountTable.updateBalance({ accountId: 1, value: 1000000 })
+//   .then(() => console.log("update occurred"))
+//   .catch((error) => console.error("error", error));
 
 module.exports = AccountTable;

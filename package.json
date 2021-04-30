@@ -8,7 +8,7 @@
     "start": "concurrently --kill-others \"npm run backend\" \"npm run frontend\"",
     "backend": "nodemon backend/bin/server",
     "frontend_babel": "parcel frontend/src/index.html",
-    "frontend": "npm start"
+    "frontend": "npm start --prefix frontend-npx"
   },
   "repository": {
     "type": "git",

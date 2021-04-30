@@ -29,18 +29,40 @@ class AccountDragonTable {
       );
     });
   }
+
+  static getDragonAccount({ dragonId }) {
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `
+      SELECT "accountId" FROM accountDragon 
+      WHERE "dragonId"=$1`,
+        [dragonId],
+        (error, response) => {
+          if (error) return reject(error);
+          resolve({ accountId: response.rows[0].accountId });
+        }
+      );
+    });
+  }
+  static updateDragonAccount({ dragonId, accountId }) {
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `
+      UPDATE accountDragon SET "accountId"=$1 
+      WHERE "dragonId"=$2`,
+        [accountId, dragonId],
+        (error, response) => {
+          if (error) return reject(error);
+          resolve();
+        }
+      );
+    });
+  }
 }
 
 // GitBash in BACKEND: node app/accountDragon/table.js
 // AccountDragonTable.getAccountDragons({ accountId: 2 })
 //   .then(({ accountDragons }) => console.log("accountDragons", accountDragons))
-//   .catch((error) => console.error("error", error));
-
-// AccountDragonTable.storeAccountDragon({
-//   accountId: 1,
-//   dragonId: 3,
-// })
-//   .then(() => console.log("stored account dragon"))
 //   .catch((error) => console.error("error", error));
 
 module.exports = AccountDragonTable;
